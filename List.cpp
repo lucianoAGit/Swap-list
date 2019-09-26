@@ -5,36 +5,34 @@
  *      Author:
  */
 
-//Luciano Gabriel de araujo NºUSP:10716783
-
 #include "List.h"
-//pré-condição: nenhuma
-//pós-condição: Lista é criada e iniciada como vazia
+//prÃ©-condiÃ§Ã£o: nenhuma
+//pÃ³s-condiÃ§Ã£o: Lista Ã© criada e iniciada como vazia
 List::List()
 {
   head = NULL;
   count = 0;
 }
-//pré-condição: Lista já tenha sido criada
-//pós-condição: Lista é finalizada (destruída), liberando espaço ocupado pelo seus elementos
+//prÃ©-condiÃ§Ã£o: Lista jÃ¡ tenha sido criada
+//pÃ³s-condiÃ§Ã£o: Lista Ã© finalizada (destruÃ­da), liberando espaÃ§o ocupado pelo seus elementos
 List::~List()
 {
   clear();
 }
-//pré-condição: Lista já tenha sido criada
-//pós-condição: função retorna true se a Lista está vazia; false caso contrário
+//prÃ©-condiÃ§Ã£o: Lista jÃ¡ tenha sido criada
+//pÃ³s-condiÃ§Ã£o: funÃ§Ã£o retorna true se a Lista estÃ¡ vazia; false caso contrÃ¡rio
 bool List::empty()
 {
   return (head == NULL);
 }
-//pré-condição: Lista já tenha sido criada
-//pós-condição: função retorna true se a Lista está cheia; false caso contrário
+//prÃ©-condiÃ§Ã£o: Lista jÃ¡ tenha sido criada
+//pÃ³s-condiÃ§Ã£o: funÃ§Ã£o retorna true se a Lista estÃ¡ cheia; false caso contrÃ¡rio
 bool List::full()
 {
    return false;
 }
-//pré-condição: Lista já tenha sido criada
-//pós-condição: todos os itens da Lista são descartados e ela torna-se uma Lista vazia
+//prÃ©-condiÃ§Ã£o: Lista jÃ¡ tenha sido criada
+//pÃ³s-condiÃ§Ã£o: todos os itens da Lista sÃ£o descartados e ela torna-se uma Lista vazia
 void List::clear()
 { ListPointer q;
 
@@ -45,8 +43,8 @@ void List::clear()
   }
   count = 0;
 }
-//pré-condição: Lista já tenha sido criada
-//pós-condição: função retorna o número de itens na Lista
+//prÃ©-condiÃ§Ã£o: Lista jÃ¡ tenha sido criada
+//pÃ³s-condiÃ§Ã£o: funÃ§Ã£o retorna o nÃºmero de itens na Lista
 long List::size()
 {
    return count;
@@ -74,7 +72,7 @@ void List::insert(long p, ListEntry x)
   count++;
 }
 //pre-condicao: Lista ja tenha sido criada, nao esta vazia e 1 <= p <= n, onde n e o numero de entradas na Lista
-//pos-condicao: A entrada da posicao p é removida da Lista e retornada na variavel x; as entradas de todas as posicoes seguintes (desde que p<n) tem suas posicoes decrementadas em uma unidade
+//pos-condicao: A entrada da posicao p Ã© removida da Lista e retornada na variavel x; as entradas de todas as posicoes seguintes (desde que p<n) tem suas posicoes decrementadas em uma unidade
 void List::remove(long p, ListEntry &x)
 { ListPointer node, current;
 
@@ -96,17 +94,17 @@ void List::remove(long p, ListEntry &x)
   count = count - 1;
 }
 //pre-condicao: Lista ja tenha sido criada, nao esta vazia e 1 <= p <= n, onde n e o numero de entradas na Lista
-//pos-condicao: A entrada da posicao p da Lista é retornada na variavel x; a Lista permanece inalterada
+//pos-condicao: A entrada da posicao p da Lista Ã© retornada na variavel x; a Lista permanece inalterada
 void List::retrieve(long p, ListEntry &x)
 { ListPointer current;
 
   setPosition(p,current);
   x = current->entry;
 }
-// pré: Lista criada
-// pós: Retorna posição que o elemento x encontra-se na lista
+// prÃ©: Lista criada
+// pÃ³s: Retorna posiÃ§Ã£o que o elemento x encontra-se na lista
 // caso exista mais de um x na lista, retorna o primeiro encontrado
-// caso não encontre, retorna zero
+// caso nÃ£o encontre, retorna zero
 long List::search(ListEntry x)
 { long p=1;
   ListPointer q=head;
@@ -173,14 +171,14 @@ int t_list,i=0;
 
 t_list = size(); 	
 
-Node_A=Node_B=ant_A=ant_B=P_aux=head; //No início, todos os ponteiros apontam para a cabeça "inicio" da lista.
+Node_A=Node_B=ant_A=ant_B=P_aux=head; //No inÃ­cio, todos os ponteiros apontam para a cabeÃ§a "inicio" da lista.
 	
-	if(empty() || t_list <= 1 || a == b) //Se a lista está vazia ou contém um único elemento ou a=b, o método não altera a lista e retorna false.
+	if(empty() || t_list <= 1 || a == b) //Se a lista estÃ¡ vazia ou contÃ©m um Ãºnico elemento ou a=b, o mÃ©todo nÃ£o altera a lista e retorna false.
 	{	return false;	
 	}
 	else if(t_list > 1)
 	{	
-		while(i<t_list)//Laço responsável por posicionar os ponteiros NodeA e o seu anterior ant_A, e os ponteiros NodeB e o seu anterior ant_B nas posições corretas.
+		while(i<t_list)//LaÃ§o responsÃ¡vel por posicionar os ponteiros NodeA e o seu anterior ant_A, e os ponteiros NodeB e o seu anterior ant_B nas posiÃ§Ãµes corretas.
 		{
 			if(Node_A->entry != a)
 			{	ant_A = Node_A;								
@@ -192,18 +190,18 @@ Node_A=Node_B=ant_A=ant_B=P_aux=head; //No início, todos os ponteiros apontam pa
 			}
 			i++; 
 		}
-	 	if(Node_A == NULL || Node_B == NULL)//Se os elementos a e b não forem encontrados na lista, o método não altera a lista e retorna false.
+	 	if(Node_A == NULL || Node_B == NULL)//Se os elementos a e b nÃ£o forem encontrados na lista, o mÃ©todo nÃ£o altera a lista e retorna false.
 		{return false;
 		}
-		if(Node_A == head)//Se o NodeA for a cabeça "Inicio" da lista.
+		if(Node_A == head)//Se o NodeA for a cabeÃ§a "Inicio" da lista.
 		{	head = Node_B;										
 			ant_B->nextNode = Node_A;
-			P_aux = Node_A->nextNode; //Necessário o uso de um ponteiro auxiliar "P_aux" para armazenar a referencia do proximo listNode.							
+			P_aux = Node_A->nextNode; //NecessÃ¡rio o uso de um ponteiro auxiliar "P_aux" para armazenar a referencia do proximo listNode.							
 			Node_A->nextNode = Node_B->nextNode;						
 			Node_B->nextNode = P_aux;								
 			return true; 
 		}
-		else if(Node_B == head)//Se o NodeB for a cabeça "Inicio" da lista.
+		else if(Node_B == head)//Se o NodeB for a cabeÃ§a "Inicio" da lista.
 		{	head = Node_A;										
 			ant_A->nextNode = Node_B;
 			P_aux = Node_A->nextNode;								
@@ -211,7 +209,7 @@ Node_A=Node_B=ant_A=ant_B=P_aux=head; //No início, todos os ponteiros apontam pa
 			Node_B->nextNode = P_aux;								
 			return true;
 		}
-		else if(Node_A != head && Node_B != head)//Se o NodeA e NodeB forem quaisquer outras posições que não forem a cabeça "Inicio".
+		else if(Node_A != head && Node_B != head)//Se o NodeA e NodeB forem quaisquer outras posiÃ§Ãµes que nÃ£o forem a cabeÃ§a "Inicio".
 		{	ant_A->nextNode = Node_B; 						
 			ant_B->nextNode = Node_A;
 			P_aux = Node_A->nextNode;								
