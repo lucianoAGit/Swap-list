@@ -5,8 +5,6 @@
  *      Author:
  */
 
-//Luciano Gabriel de araujo NºUSP:10716783
-
 #ifndef LIST_H
 #define LIST_H
 
