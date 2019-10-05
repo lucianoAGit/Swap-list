@@ -1,0 +1,1 @@
+Esse trabalho tem como objetivo trocar a posição de dois elementos dentro de uma lista, mas por meio de ponteiros, sem alterar o valor do campo de carga.
